@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F0AC7289-006B-4E17-A620-3F17F6061F42"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RickAndMortySwift/Controllers/Cells/EpisodeCellTableViewCell.swift"
@@ -23,119 +23,103 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0FBBB777-5196-48D9-A362-EAF1461A4035"
+            uuid = "454AAB3C-A434-4097-B26E-019658C705E1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickAndMortySwift/NetworkManager.swift"
+            filePath = "RickAndMortySwift/Controllers/CharacterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "getCharacterImage(character:completion:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1F23A5E1-67FE-448D-B8F6-CFB2D4F649A4"
-            shouldBeEnabled = "Yes"
+            uuid = "10751DD7-E85C-4183-A747-8352B945D2B4"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickAndMortySwift/NetworkManager.swift"
+            filePath = "RickAndMortySwift/Controllers/CharacterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "getCharacterImage(character:completion:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0D5378B6-4374-4119-B6D8-CF8805F322F3"
+            uuid = "0B7A6931-0DF3-4ECA-ACEC-1FF154DCF3B4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickAndMortySwift/NetworkManager.swift"
+            filePath = "RickAndMortySwift/Controllers/CharacterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "getCharacterImage(character:completion:)"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "651C22CC-B14C-4B28-8AC6-2FDA002BA0C8"
+            uuid = "63F45069-3313-4DB5-9DED-5F5E1626F9EF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickAndMortySwift/NetworkManager.swift"
+            filePath = "RickAndMortySwift/Controllers/CharacterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "getCharacterImage(character:completion:)"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D71DFF46-7868-4C6E-A6F7-9D5BCD5DC999"
+            uuid = "FEFBC022-E2FA-4D2A-84CC-6AA966E9A3DC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickAndMortySwift/NetworkManager.swift"
+            filePath = "RickAndMortySwift/Controllers/CharacterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "getCharacterImage(character:completion:)"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D71DFF46-7868-4C6E-A6F7-9D5BCD5DC999 - 97607cc4ca248ebc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RickAndMortySwift.NetworkManager.getCharacterImage(character: RickAndMortySwift.Character, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "RickAndMortySwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/manan/Desktop/RickAndMortySwift/RickAndMortySwift/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "436">
-               </Location>
-               <Location
-                  uuid = "D71DFF46-7868-4C6E-A6F7-9D5BCD5DC999 - a805aa644eaaf3e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RickAndMortySwift.NetworkManager.getCharacterImage(character: RickAndMortySwift.Character, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "RickAndMortySwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/manan/Desktop/RickAndMortySwift/RickAndMortySwift/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "124">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8216FA1C-020F-4875-875B-17344E4B6699"
+            uuid = "8009A8D0-BA5B-441B-8242-A703C8CBED03"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortySwift/Controllers/CharacterViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DFDCC911-A7D6-4EBD-8DD6-135468F80487"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -151,48 +135,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5CAA2CD4-FB28-4E0A-A663-9B64DA402683"
+            uuid = "3709589D-B604-4ED9-821A-2573FABB051C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickAndMortySwift/Cells/CharacterCellTableViewCell.swift"
+            filePath = "RickAndMortySwift/Controllers/CharacterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "image"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7088EB56-938F-4B7A-9A88-982BEEF0E095"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RickAndMortySwift/Cells/CharacterCellTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "configureImage()"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3709589D-B604-4ED9-821A-2573FABB051C - 1729e4d30eb999c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;RickAndMortySwift.PagedCharacter, Swift.Error&gt;) -&gt; () in RickAndMortySwift.CharacterViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "RickAndMortySwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manan/Desktop/iOS%20Projects/RickAndMortySwift/RickAndMortySwift/Controllers/CharacterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1312">
+               </Location>
+               <Location
+                  uuid = "3709589D-B604-4ED9-821A-2573FABB051C - 34ea311bc4caf47d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Result&lt;RickAndMortySwift.PagedCharacter, Swift.Error&gt;) -&gt; () in RickAndMortySwift.CharacterViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "RickAndMortySwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manan/Desktop/iOS%20Projects/RickAndMortySwift/RickAndMortySwift/Controllers/CharacterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "14D3BDFE-C7CD-4FAE-ABFA-9F3AA8144548"
+            uuid = "7F3F3AD5-9723-4985-BE35-5EB5C41131F0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RickAndMortySwift/NetworkManager.swift"
+            filePath = "RickAndMortySwift/Cells/EpisodeCellTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "getCharacterImage(character:completion:)"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "configureCell()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

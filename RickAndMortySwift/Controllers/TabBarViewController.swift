@@ -44,19 +44,19 @@ class TabBarViewController: UITabBarController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        self.viewControllers = [episodesVC,charactersVC,locationsVC]
+        self.viewControllers = [charactersVC, episodesVC,locationsVC]
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
         if item == tabBar.items?[0] {
-            title = "Episodes"
-            navigationController?.title = "Episodes"
+            title = "Characters"
+            navigationController?.title = "Characters"
         }
         
         else if item == tabBar.items?[1] {
-            title = "Characters"
-            navigationController?.title = "Characters"
+            title = "Episodes"
+            navigationController?.title = "Episodes"
         }
         
         else if item == tabBar.items?[2] {

@@ -26,6 +26,8 @@
 		E8398E99264605E0007C5661 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8398E98264605E0007C5661 /* LocationViewController.swift */; };
 		E8398E9B2646061B007C5661 /* LocationCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8398E9A2646061B007C5661 /* LocationCellTableViewCell.swift */; };
 		E8398E9D2646070F007C5661 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8398E9C2646070F007C5661 /* TabBarViewController.swift */; };
+		E86A96AB2647467600EDE7A8 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A96AA2647467600EDE7A8 /* CharacterDetailViewController.swift */; };
+		E86A96AE2647477000EDE7A8 /* CharacterInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A96AD2647477000EDE7A8 /* CharacterInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		E8398E98264605E0007C5661 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		E8398E9A2646061B007C5661 /* LocationCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCellTableViewCell.swift; sourceTree = "<group>"; };
 		E8398E9C2646070F007C5661 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E86A96AA2647467600EDE7A8 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		E86A96AD2647477000EDE7A8 /* CharacterInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				E8398E98264605E0007C5661 /* LocationViewController.swift */,
 				E8398E942646018C007C5661 /* CharacterViewController.swift */,
 				E8398E9C2646070F007C5661 /* TabBarViewController.swift */,
+				E86A96AA2647467600EDE7A8 /* CharacterDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -122,12 +127,37 @@
 		E8398E852645C913007C5661 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				E8398E862645CA3A007C5661 /* EpisodeCellTableViewCell.swift */,
-				E8398E9A2646061B007C5661 /* LocationCellTableViewCell.swift */,
-				E8398E962646022A007C5661 /* CharacterCellTableViewCell.swift */,
 				E8398E902645EA8B007C5661 /* LoadingTableViewCell.swift */,
+				E86A96B02647489400EDE7A8 /* Locations */,
+				E86A96AF2647488700EDE7A8 /* Episodes */,
+				E86A96AC2647474700EDE7A8 /* Characters */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E86A96AC2647474700EDE7A8 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				E8398E962646022A007C5661 /* CharacterCellTableViewCell.swift */,
+				E86A96AD2647477000EDE7A8 /* CharacterInfoTableViewCell.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		E86A96AF2647488700EDE7A8 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				E8398E862645CA3A007C5661 /* EpisodeCellTableViewCell.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		E86A96B02647489400EDE7A8 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				E8398E9A2646061B007C5661 /* LocationCellTableViewCell.swift */,
+			);
+			path = Locations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +233,7 @@
 				E8398E9D2646070F007C5661 /* TabBarViewController.swift in Sources */,
 				E8398E952646018C007C5661 /* CharacterViewController.swift in Sources */,
 				E8398E912645EA8B007C5661 /* LoadingTableViewCell.swift in Sources */,
+				E86A96AE2647477000EDE7A8 /* CharacterInfoTableViewCell.swift in Sources */,
 				E8398E842645C45E007C5661 /* NetworkManager.swift in Sources */,
 				E8398E8D2645CD57007C5661 /* Episode.swift in Sources */,
 				E8398E712645C3A0007C5661 /* EpisodeViewController.swift in Sources */,
@@ -214,6 +245,7 @@
 				E8398E872645CA3A007C5661 /* EpisodeCellTableViewCell.swift in Sources */,
 				E8398E9B2646061B007C5661 /* LocationCellTableViewCell.swift in Sources */,
 				E8398E6F2645C3A0007C5661 /* SceneDelegate.swift in Sources */,
+				E86A96AB2647467600EDE7A8 /* CharacterDetailViewController.swift in Sources */,
 				E8398E932645FCC5007C5661 /* Extensions.swift in Sources */,
 				E8398E8B2645CD50007C5661 /* Location.swift in Sources */,
 			);

@@ -17,6 +17,6 @@ struct Location: Codable {
     let name: String
     let type: String
     let dimension: String
-    //let residents: [Character]
-    //let url: Location
+    let residents: [String]
+    let url: String
 }

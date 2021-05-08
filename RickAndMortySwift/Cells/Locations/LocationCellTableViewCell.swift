@@ -28,7 +28,8 @@ class LocationCellTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(label)
-        label.frame = frame
+        label.frame = contentView.frame
+        label.frame = frame.inset(by: UIEdgeInsets(top: 4, left: 20, bottom: 4, right: 0))
         self.configureCell()
     }
     

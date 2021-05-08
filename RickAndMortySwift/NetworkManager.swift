@@ -91,9 +91,20 @@ final class NetworkManager {
         if let imgUrl = character.image {
             guard let url = URL(string: imgUrl) else { return }
             
-            let task = URLSession.shared.dataTask(with: url)  { data, _, error in
-                guard let data = data, error == nil else { return }
-                completion(.success(data))
+            let task = URLSession.shared.dataTask(with: url) {data, _ , error in
+                guard let data = data, error == nil else {
+                    return
+                }
+                
+                do {
+                    //let image = try Data(contentsOf: data)
+                    print("Success image for url: \(url)")
+                    completion(.success(data))
+                }
+                catch {
+                    print("Fail image for url: \(url)")
+                    completion(.failure(error))
+                }
             }
             
             task.resume()
