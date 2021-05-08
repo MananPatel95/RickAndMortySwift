@@ -18,6 +18,7 @@ final class NetworkManager {
         case character
         case location
         case episode
+        case avatar
     }
     
     private init() {}
@@ -57,7 +58,7 @@ final class NetworkManager {
     }
     
     
-    public func getCharactersData(    page: Int, completion: @escaping (Result<PagedCharacter, Error>) -> Void
+    public func getCharactersData(page: Int, completion: @escaping (Result<PagedCharacter, Error>) -> Void
     ) {
         
         print(URL(string: Constants.baseURL + endpoints.character.rawValue + "/?page=\(String(page))") ?? "Printed character url")
@@ -82,6 +83,22 @@ final class NetworkManager {
         
         task.resume()
         
+    }
+    
+    public func getCharacterImage(character: Character, completion: @escaping (Result<Data, Error>) -> Void
+    ) {
+        
+        if let imgUrl = character.image {
+            guard let url = URL(string: imgUrl) else { return }
+            
+            let task = URLSession.shared.dataTask(with: url)  { data, _, error in
+                guard let data = data, error == nil else { return }
+                completion(.success(data))
+            }
+            
+            task.resume()
+            
+        }
     }
     
     public func getLocationsData(    page: Int, completion: @escaping (Result<PagedLocation, Error>) -> Void

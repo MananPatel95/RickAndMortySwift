@@ -21,6 +21,6 @@ struct Character: Codable {
     //let origin: Location
     //let location: Location
     //let episode: [Episode]
-    let imageURL: String?
+    let image: String?
     let url: String?
 }

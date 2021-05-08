@@ -10,7 +10,9 @@ import UIKit
 class CharacterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var page: Int = 1
-    var characters: [Character?] = [] {
+    var characters: [Character?] = []
+    
+    var images: [UIImage?] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -54,6 +56,18 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
                 case .success(let models):
                     for result in models.results {
                         self.characters.append(result)
+                        
+                        NetworkManager.shared.getCharacterImage(character: result) { result in
+                            switch result {
+                            case .success(let data):
+                                let image = UIImage(data: data)
+                                self.images.append(image)
+                                print("Images count: \(self.images.count)")
+                            case .failure(let error):
+                                print("ERROR GETTING IMAGE")
+                                print(error)
+                            }
+                        }
                     }
                     self.page += 1
                     
@@ -73,6 +87,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         cell.character = characters[indexPath.row]
+        cell.image = images[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         return cell
     }
