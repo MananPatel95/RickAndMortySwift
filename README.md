@@ -1,3 +1,4 @@
+![locationsDetail]()
 
 # RickAndMortySwift
 A Swift iOS app to use the Rick and Morty API to display characters, episodes, and locations within the show!
@@ -18,7 +19,7 @@ Demo:
     <tr>
     <td><img src="https://user-images.githubusercontent.com/12612826/117590288-b92e5280-b0fc-11eb-90e6-244d79edeb4c.png"></td>
     <td><img src="https://user-images.githubusercontent.com/12612826/117590289-b9c6e900-b0fc-11eb-8c5a-ce81fc7103d6.png"></td>
-    <td><img src="https://user-images.githubusercontent.com/12612826/117590290-b9c6e900-b0fc-11eb-8ea8-9596646d083e.png"></td>
+    <td><img src="https://user-images.githubusercontent.com/12612826/117590913-b123e200-b0ff-11eb-86de-67f9f2e9ad67.png"></td>
   </tr>
  </table>
  
