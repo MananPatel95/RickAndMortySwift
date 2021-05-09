@@ -146,7 +146,7 @@ class LocationDetailViewController: UIViewController, UITableViewDataSource, UIT
         }
         
         if section == 1 {
-            return "Characters"
+            return "Residents"
         }
         
         return "Default Title"
