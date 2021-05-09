@@ -28,6 +28,10 @@
 		E8398E9D2646070F007C5661 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8398E9C2646070F007C5661 /* TabBarViewController.swift */; };
 		E86A96AB2647467600EDE7A8 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A96AA2647467600EDE7A8 /* CharacterDetailViewController.swift */; };
 		E86A96AE2647477000EDE7A8 /* CharacterInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A96AD2647477000EDE7A8 /* CharacterInfoTableViewCell.swift */; };
+		E86A96B526488F4100EDE7A8 /* EpisodeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A96B426488F4100EDE7A8 /* EpisodeInfoTableViewCell.swift */; };
+		E86A96B726488F8400EDE7A8 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A96B626488F8400EDE7A8 /* EpisodeDetailViewController.swift */; };
+		E86A96B926489E7B00EDE7A8 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A96B826489E7B00EDE7A8 /* LocationDetailViewController.swift */; };
+		E86A96BB26489EEA00EDE7A8 /* LocationInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A96BA26489EEA00EDE7A8 /* LocationInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		E8398E9C2646070F007C5661 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E86A96AA2647467600EDE7A8 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		E86A96AD2647477000EDE7A8 /* CharacterInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoTableViewCell.swift; sourceTree = "<group>"; };
+		E86A96B426488F4100EDE7A8 /* EpisodeInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeInfoTableViewCell.swift; path = RickAndMortySwift/Cells/Characters/EpisodeInfoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		E86A96B626488F8400EDE7A8 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeDetailViewController.swift; path = RickAndMortySwift/Controllers/Characters/EpisodeDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		E86A96B826489E7B00EDE7A8 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailViewController.swift; path = RickAndMortySwift/Controllers/Characters/LocationDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		E86A96BA26489EEA00EDE7A8 /* LocationInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationInfoTableViewCell.swift; path = RickAndMortySwift/Cells/Characters/LocationInfoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +112,10 @@
 		E8398E802645C443007C5661 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E8398E702645C3A0007C5661 /* EpisodeViewController.swift */,
-				E8398E98264605E0007C5661 /* LocationViewController.swift */,
-				E8398E942646018C007C5661 /* CharacterViewController.swift */,
+				E86A96B126488EAF00EDE7A8 /* Locations */,
+				E86A96B226488EB800EDE7A8 /* Episodes */,
+				E86A96B326488EC400EDE7A8 /* Characters */,
 				E8398E9C2646070F007C5661 /* TabBarViewController.swift */,
-				E86A96AA2647467600EDE7A8 /* CharacterDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +154,7 @@
 		E86A96AF2647488700EDE7A8 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				E86A96B426488F4100EDE7A8 /* EpisodeInfoTableViewCell.swift */,
 				E8398E862645CA3A007C5661 /* EpisodeCellTableViewCell.swift */,
 			);
 			path = Episodes;
@@ -155,9 +163,37 @@
 		E86A96B02647489400EDE7A8 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				E86A96BA26489EEA00EDE7A8 /* LocationInfoTableViewCell.swift */,
 				E8398E9A2646061B007C5661 /* LocationCellTableViewCell.swift */,
 			);
 			path = Locations;
+			sourceTree = "<group>";
+		};
+		E86A96B126488EAF00EDE7A8 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				E86A96B826489E7B00EDE7A8 /* LocationDetailViewController.swift */,
+				E8398E98264605E0007C5661 /* LocationViewController.swift */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		E86A96B226488EB800EDE7A8 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				E86A96B626488F8400EDE7A8 /* EpisodeDetailViewController.swift */,
+				E8398E702645C3A0007C5661 /* EpisodeViewController.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		E86A96B326488EC400EDE7A8 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				E8398E942646018C007C5661 /* CharacterViewController.swift */,
+				E86A96AA2647467600EDE7A8 /* CharacterDetailViewController.swift */,
+			);
+			path = Characters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,15 +271,19 @@
 				E8398E912645EA8B007C5661 /* LoadingTableViewCell.swift in Sources */,
 				E86A96AE2647477000EDE7A8 /* CharacterInfoTableViewCell.swift in Sources */,
 				E8398E842645C45E007C5661 /* NetworkManager.swift in Sources */,
+				E86A96B726488F8400EDE7A8 /* EpisodeDetailViewController.swift in Sources */,
 				E8398E8D2645CD57007C5661 /* Episode.swift in Sources */,
 				E8398E712645C3A0007C5661 /* EpisodeViewController.swift in Sources */,
 				E8398E8F2645DF80007C5661 /* Info.swift in Sources */,
 				E8398E6D2645C3A0007C5661 /* AppDelegate.swift in Sources */,
 				E8398E99264605E0007C5661 /* LocationViewController.swift in Sources */,
 				E8398E972646022A007C5661 /* CharacterCellTableViewCell.swift in Sources */,
+				E86A96BB26489EEA00EDE7A8 /* LocationInfoTableViewCell.swift in Sources */,
 				E8398E892645CC99007C5661 /* Character.swift in Sources */,
+				E86A96B526488F4100EDE7A8 /* EpisodeInfoTableViewCell.swift in Sources */,
 				E8398E872645CA3A007C5661 /* EpisodeCellTableViewCell.swift in Sources */,
 				E8398E9B2646061B007C5661 /* LocationCellTableViewCell.swift in Sources */,
+				E86A96B926489E7B00EDE7A8 /* LocationDetailViewController.swift in Sources */,
 				E8398E6F2645C3A0007C5661 /* SceneDelegate.swift in Sources */,
 				E86A96AB2647467600EDE7A8 /* CharacterDetailViewController.swift in Sources */,
 				E8398E932645FCC5007C5661 /* Extensions.swift in Sources */,

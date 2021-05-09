@@ -18,6 +18,15 @@ class CharacterDetailViewController: UIViewController, UITableViewDataSource, UI
     
     var character: Character?
     
+    var episodes: [Episode?] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+
+    
     var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
@@ -46,6 +55,8 @@ class CharacterDetailViewController: UIViewController, UITableViewDataSource, UI
         tableView.frame = view.frame
         tableView.dataSource = self
         tableView.delegate = self
+        
+        getEpisodeData(forCharacter: character!)
     }
     
     init(character: Character) {
@@ -88,28 +99,11 @@ class CharacterDetailViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-//            let cell: UITableViewCell = {
-//                guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-//                    return UITableViewCell(style: .default, reuseIdentifier: "cell")
-//                    }
-//                    return cell
-//                }()
-//            if let data = character?.imageData {
-//                let cellImg : UIImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 250, height: 250)))
-//                cellImg.contentMode = .center
-//                cellImg.image = UIImage.init(data: data)
-//                cell.addSubview(cellImg)
-//                //cell.imageView?.frame = CGRect(origin: .zero, size: CGSize(width: 150, height: 150))
-//                //cell.cel?.image =
-//            }
-//
-//            return cell
-            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoTableViewCell.identifier, for: indexPath) as? CharacterInfoTableViewCell else {
                 fatalError()
             }
             if let data = character?.imageData {
-                cell.charImageView.anchor(top: cell.topAnchor,
+                cell.typeImageView.anchor(top: cell.topAnchor,
                                           left: cell.leftAnchor,
                                           bottom: cell.bottomAnchor,
                                           right: cell.rightAnchor,
@@ -119,10 +113,12 @@ class CharacterDetailViewController: UIViewController, UITableViewDataSource, UI
                                           paddingRight: 4,
                                           width: 250,
                                           height: 250,
-                                          enableInsets: false)
-                cell.charImageView.image = UIImage.init(data: data)
-                cell.charImageView.contentMode = .center
-                cell.charImageView.layer.cornerRadius = 16
+                                          enableInsets: true)
+                cell.typeImageView.contentMode = .center
+                cell.typeImageView.layer.cornerRadius = 16
+                cell.selectionStyle = .none
+                cell.typeImageView.image = UIImage.init(data: data)
+            
             }
             
             return cell
@@ -132,36 +128,55 @@ class CharacterDetailViewController: UIViewController, UITableViewDataSource, UI
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterInfoTableViewCell.identifier, for: indexPath) as? CharacterInfoTableViewCell else {
                 fatalError()
             }
+            
+            cell.selectionStyle = .none
+            
             if indexPath.row == 0 {
-                cell.charImageView.image = UIImage.init(systemName: "hare")
+                cell.typeImageView.image = UIImage.init(systemName: "hare")
                 cell.typeLabel.text = "Species"
                 cell.dataLabel.text = character?.species
             }
             
             else if indexPath.row == 1 {
-                cell.charImageView.image = UIImage.init(systemName: "person.2")
+                cell.typeImageView.image = UIImage.init(systemName: "person.2")
                 cell.typeLabel.text = "Gender"
                 cell.dataLabel.text = character?.gender
             }
             
             else if indexPath.row == 2 {
-                cell.charImageView.image = UIImage.init(systemName: "waveform.path.ecg.rectangle.fill")
+                cell.typeImageView.image = UIImage.init(systemName: "waveform.path.ecg.rectangle.fill")
                 cell.typeLabel.text = "Status"
                 cell.dataLabel.text = character?.status
             }
             
             else if indexPath.row == 3 {
-                cell.charImageView.image = UIImage.init(systemName: "map")
+                cell.typeImageView.image = UIImage.init(systemName: "map")
                 cell.typeLabel.text = "Location"
                 cell.dataLabel.text = character?.location.name
             }
             else if indexPath.row == 4 {
-                cell.charImageView.image = UIImage.init(systemName: "house")
+                cell.typeImageView.image = UIImage.init(systemName: "house")
                 cell.typeLabel.text = "Origin"
                 cell.dataLabel.text = character?.origin.name
             }
             
             cell.character = character
+            return cell
+        }
+        
+        if indexPath.section == 2 {
+            let cell: UITableViewCell = {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+                return UITableViewCell(style: .default, reuseIdentifier: "cell")
+                }
+                return cell
+            }()
+            
+            if (episodes.count == character?.episode.count) {
+                if let name = episodes[indexPath.row]?.name, let ep = episodes[indexPath.row]?.episode {
+                    cell.textLabel?.text = ep + " - " + name
+                }
+            }
             return cell
         }
         
@@ -178,7 +193,28 @@ class CharacterDetailViewController: UIViewController, UITableViewDataSource, UI
             case 1:
                 return "Info"
             default:
-                return "Default"
+                return "Episodes"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let episode = episodes[indexPath.row], indexPath.section == 2 {
+            present(UINavigationController(rootViewController: EpisodeDetailViewController(episode: episode)), animated: true, completion: nil)
+        }
+    }
+    
+    func getEpisodeData(forCharacter character: Character) {
+        for url in character.episode {
+            NetworkManager.shared.getEpisodesForCharacter(characterURL: url) { data in
+                switch data {
+                case .success(let model):
+                    self.episodes.append(model)
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
     }
 }

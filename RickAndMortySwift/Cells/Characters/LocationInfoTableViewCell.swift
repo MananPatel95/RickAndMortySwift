@@ -7,10 +7,10 @@
 
 import UIKit
 
-class CharacterInfoTableViewCell: UITableViewCell {
-    static let identifier = "CharacterInfoTableViewCell"
+class LocationInfoTableViewCell: UITableViewCell {
+    static let identifier = "LocationInfoTableViewCell"
     
-    var character: Character? {
+    var location: Location? {
         didSet {
             self.configureCell()
         }

@@ -59,7 +59,7 @@ class CharacterCellTableViewCell: UITableViewCell {
         addSubview(subLabel)
         addSubview(statusImageView)
         
-        charImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 4, paddingLeft: 16, paddingBottom: 0, paddingRight: 4, width: 50, height: 50, enableInsets: false)
+        charImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 4, paddingLeft: 16, paddingBottom: 0, paddingRight: 4, width: 44, height: 44, enableInsets: false)
         label.anchor(top: topAnchor, left: charImageView.rightAnchor, bottom: nil, right: nil, paddingTop: 4, paddingLeft: 16, paddingBottom: 0, paddingRight: 4, width: 300, height: 32, enableInsets: false)
         statusImageView.anchor(top: label.bottomAnchor, left: charImageView.rightAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 16, paddingBottom: 8, paddingRight: 0, width: 8, height: 8, enableInsets: false)
         subLabel.anchor(top: label.bottomAnchor, left: statusImageView.rightAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 4, paddingBottom: 8, paddingRight: 4, width: 300, height: 12, enableInsets: false)
@@ -72,7 +72,7 @@ class CharacterCellTableViewCell: UITableViewCell {
     }
     
     func configureCell() {
-        if let name = character?.name, let subtitle = character?.species, let imageData = character?.imageData, let status = character?.status {
+        if let name = character?.name, let subtitle = character?.species, let status = character?.status {
             label.text = name
             subLabel.text = "\(status) - \(subtitle)"
             if status == "Alive" {
@@ -81,6 +81,10 @@ class CharacterCellTableViewCell: UITableViewCell {
             else if status == "Dead" {
                 statusImageView.backgroundColor = .red
             }
+            
+        }
+        
+        if let imageData = character?.imageData {
             charImageView.image = UIImage(data: imageData)
         }
     }

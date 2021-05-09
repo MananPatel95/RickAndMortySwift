@@ -7,10 +7,12 @@
 
 import UIKit
 
-class CharacterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var page: Int = 1
-    var characters: [Character?] = [] {
+    var pagedEpisodes: PagedEpisode?
+    
+    var episodes: [Episode?] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -18,26 +20,22 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    var images: [UIImage?] = []
-    
     var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(CharacterCellTableViewCell.self, forCellReuseIdentifier: CharacterCellTableViewCell.identifier)
+        tableView.register(EpisodeCellTableViewCell.self, forCellReuseIdentifier: EpisodeCellTableViewCell.identifier)
         tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.identifier)
         tableView.clipsToBounds = true
-        tableView.alwaysBounceVertical = false
         return tableView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Characters"
+        title = "Episodes"
         
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
-        
         
     }
     
@@ -48,26 +46,18 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == self.characters.count {
+        if indexPath.row == self.episodes.count {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.identifier, for: indexPath) as? LoadingTableViewCell else {
                 fatalError()
             }
             
-            NetworkManager.shared.getCharactersData(page: page) { result in
+            NetworkManager.shared.getEpisodesData(page: page) { result in
                 switch result {
                 case .success(let models):
-                    for var character in models.results {
-                        
-                        NetworkManager.shared.getCharacterImage(character: character) { data in
-                            switch data {
-                            case .success(let responseData):
-                                character.imageData = responseData
-                                self.characters.append(character)
-                            case .failure(let error):
-                                //self.images.append(UIImage.init(named: "person.2"))
-                                print(error)
-                            }
-                        }
+                    self.pagedEpisodes = models
+                    
+                    for result in models.results {
+                        self.episodes.append(result)
                     }
                     self.page += 1
                     
@@ -82,24 +72,24 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
             return cell
         }
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterCellTableViewCell.identifier, for: indexPath) as? CharacterCellTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: EpisodeCellTableViewCell.identifier, for: indexPath) as? EpisodeCellTableViewCell else {
             fatalError()
         }
         
-        cell.character = characters[indexPath.row]
+        cell.episode = episodes[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count + 1
+        return episodes.count + 1
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let character = characters[indexPath.row] {
-            present(UINavigationController(rootViewController: CharacterDetailViewController(character: character)), animated: true, completion: nil)
+        if let episode = episodes[indexPath.row] {
+            present(UINavigationController(rootViewController: EpisodeDetailViewController(episode: episode)), animated: true, completion: nil)
         }
     }
 

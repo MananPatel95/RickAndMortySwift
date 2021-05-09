@@ -20,7 +20,7 @@ struct Character: Codable {
     let gender: String?
     let origin: CharLocation
     let location: CharLocation
-    let episode: [String]
+    let episode: [String?]
     let image: String?
     let url: String?
     var imageData: Data?
