@@ -28,3 +28,7 @@ Demo:
  * UIKit 
  * URLSessions to hit the <a href="https://rickandmortyapi.com/documentation"> RickAndMorty API </a>
  * Programmatic AutoLayout design
+
+
+### Note:
+For some reason the file system on github doesnt reflect the structure in the project
